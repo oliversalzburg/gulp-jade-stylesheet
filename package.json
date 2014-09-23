@@ -1,0 +1,30 @@
+{
+  "name": "gulp-jade-stylesheet",
+  "version": "1.0.0",
+  "description": "Turn file names in stream into jade link directives",
+  "keywords": [
+    "gulp",
+    "jade"
+  ],
+  "homepage": "https://github.com/oliversalzburg/gulp-jade-stylesheet",
+  "author": {
+    "name": "Oliver Salzburg",
+    "email": "oliver.salzburg@gmail.com"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oliversalzburg/gulp-jade-stylesheet.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mkdirp": "^0.5.0",
+    "slash": "^1.0.0",
+    "through2": "^0.6.2"
+  },
+  "license": {
+    "type": "MIT"
+  }
+}
