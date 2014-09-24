@@ -10,7 +10,12 @@ module.exports = function( jadeFile, options ) {
 
 	var write = function( file, encoding, callback ) {
 		if( file.path != "undefined" ) {
-			linkTags = linkTags + "link(rel=\"stylesheet\" href=\"/" + slash( path.relative( options.root, file.path ) ) + "\")" + "\n";
+			var relativePath = path.relative( options.root, file.path );
+			var normalized = slash( relativePath );
+			if( options.transform ) {
+				normalized = options.transform( normalized );
+			}
+			linkTags = linkTags + "link(rel=\"stylesheet\" href=\"" + normalized + "\")" + "\n";
 		}
 		this.push( file );
 		callback();
@@ -19,7 +24,7 @@ module.exports = function( jadeFile, options ) {
 	var flush = function( callback ) {
 		var dirname = path.dirname( jadeFile );
 		mkdirp( dirname, function( error ) {
-			if( !error) {
+			if( !error ) {
 				fs.writeFile( jadeFile, linkTags, callback );
 			}
 		} );
