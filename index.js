@@ -11,9 +11,13 @@ module.exports = function( jadeFile, options ) {
 	var write = function( file, encoding, callback ) {
 		if( file.path != "undefined" ) {
 			var relativePath = path.relative( options.root, file.path );
-			var normalized   = slash( relativePath );
+			var normalized     = slash( relativePath );
+			var sourceFileName = normalized;
 			if( options.transform ) {
-				normalized = options.transform( normalized );
+				sourceFileName = options.transform( sourceFileName );
+			}
+			if( options.version ) {
+				sourceFileName = sourceFileName + "?v=" + options.version;
 			}
 			linkTags = linkTags + "link(rel=\"stylesheet\" href=\"" + normalized + "\")" + "\n";
 		}
