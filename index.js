@@ -19,7 +19,7 @@ module.exports = function( jadeFile, options ) {
 			if( options.version ) {
 				sourceFileName = sourceFileName + "?v=" + options.version;
 			}
-			linkTags = linkTags + "link(rel=\"stylesheet\" href=\"" + normalized + "\")" + "\n";
+			linkTags = linkTags + "link(rel=\"stylesheet\" href=\"" + sourceFileName + "\")" + "\n";
 		}
 		this.push( file );
 		callback();
