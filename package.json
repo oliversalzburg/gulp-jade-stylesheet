@@ -1,6 +1,6 @@
 {
   "name": "gulp-jade-stylesheet",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Turn file names in stream into jade link directives",
   "keywords": [
     "gulp",
@@ -24,7 +24,5 @@
     "slash": "^1.0.0",
     "through2": "^0.6.2"
   },
-  "license": {
-    "type": "MIT"
-  }
+  "license": "MIT"
 }
