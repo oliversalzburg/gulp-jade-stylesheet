@@ -1,4 +1,4 @@
-gulp-jade-stylesheet
+gulp-pug-stylesheet
 ====================
 
-Turn file names in stream into jade link directives
+Turn file names in stream into pug link directives
