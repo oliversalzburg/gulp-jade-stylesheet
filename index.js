@@ -6,11 +6,12 @@ var through = require( "through2" );
 
 module.exports = function( pugFile, options ) {
 	var linkTags = "";
+	options      = options || {};
 	options.root = options.root || process.cwd();
 
 	var write = function( file, encoding, callback ) {
 		if( file.path != "undefined" ) {
-			var relativePath = path.relative( options.root, file.path );
+			var relativePath   = path.relative( options.root, file.path );
 			var normalized     = slash( relativePath );
 			var sourceFileName = normalized;
 			if( options.transform ) {
